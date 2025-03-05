@@ -22,7 +22,7 @@ const postgresProcess = execa({
 console.log(`PostgreSQL process started, capturing stdout...`);
 
 postgresProcess.stdout.on('data', (data) => {
-  console.log(`[PIPE DEBUG] ${data.toString().trim()}`);
+  console.log(`[PIPE DEBUG] ${data.toString()}`);
 });
 
 console.log('stdout: ', (await postgresProcess).stdout);
